@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('./assets/styles/variables.scss');
+@import url('./assets/styles/reset.scss');
 
 #app {
   -webkit-font-smoothing: antialiased;
