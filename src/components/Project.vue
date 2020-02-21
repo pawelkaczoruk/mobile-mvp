@@ -14,8 +14,8 @@
     </div>
     <div class="contact-form">
       <form>
-        <label for="email">GET TOUCH WITH US</label>
-        <input type="email" name="email" id="email" placeholder="Email">
+        <p>GET TOUCH WITH US</p>
+        <input type="email" name="email" placeholder="Email">
         <button>SEND</button>
       </form>
     </div>
@@ -31,16 +31,15 @@ export default {
 <style lang="scss" scoped>
 
 .project {
-  height: 100vh;
-  width: 100%;
   display: grid;
-  grid-template: 1fr / repeat(3, 1fr); 
+  grid-template: 1fr / repeat(3, 1fr);
   grid-template-areas: "imageContent features contact";
 }
 
 .image-content {
   grid-area: imageContent;
   background: black;
+  overflow: hidden;
 }
 
 .features-content {
