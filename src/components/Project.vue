@@ -1,15 +1,12 @@
 <template>
   <section class="project">
     <div class="image-content">
-      <img src="https://via.placeholder.com/300x500.png" alt="">
+      <img :src="app.image" :alt="`${app.name} image`">
     </div>
     <div class="features-content">
-      <h2>MVP APP</h2>
+      <h2>{{ app.name }}</h2>
       <ul>
-        <li>Some feature</li>
-        <li>Some feature</li>
-        <li>Some feature</li>
-        <li>Some feature</li>
+        <li :key="i" v-for="(feature, i) in app.features">{{ feature }}</li>
       </ul>
     </div>
     <div class="contact-form">
@@ -24,7 +21,8 @@
 
 <script>
 export default {
-  name: 'Project'
+  name: 'Project',
+  props: ['app']
 }
 </script>
 

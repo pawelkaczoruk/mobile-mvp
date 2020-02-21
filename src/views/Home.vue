@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <Project class="fullpage" :key="i" v-for="(el,i) in [1,2,3]"/>
+    <Project 
+      class="fullpage"
+      :key="i"
+      v-for="(el,i) in apps"
+      :app="el"/>
     <div class="sections-menu">
       <button
         class="menu-point"
@@ -18,6 +22,7 @@ import Project from '../components/Project'
 
 export default {
   name: 'Home',
+  props: ['apps'],
   components: {
     Project
   },
