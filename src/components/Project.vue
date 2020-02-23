@@ -11,9 +11,9 @@
     </div>
     <div class="contact-form">
       <form>
-        <p>GET TOUCH WITH US</p>
-        <input type="email" name="email" placeholder="Email...">
-        <button>SEND</button>
+        <p>Get in touch with us</p>
+        <input type="email" name="email" placeholder="Your e-mail adress...">
+        <button class="submit">SEND!</button>
       </form>
     </div>
   </section>
@@ -29,81 +29,63 @@ export default {
 <style lang="scss" scoped>
 
 .project {
-  display: grid;
-  grid-template: 1fr / 1fr 1.1fr .9fr;
-  grid-template-areas: "imageContent features contact";
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .image-content {
-  grid-area: imageContent;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 150px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .features-content {
-  grid-area: features;
-  background: grey;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: 2em;
 
   h2 {
-    font-size: 3.5em;
-    margin-bottom: 1.4rem;
+    font-size: 2rem;
+    text-align: center;
   }
 
-  li {
-    font-size: 1.8em;
-    margin-bottom: .3rem;
+  ul {
+    margin: 1rem 2.5rem 0 2.5rem;
 
-    &:last-child {
-      margin-bottom: 0;
+    li {
+      line-height: 1.5em;
     }
   }
 }
 
 .contact-form {
-  grid-area: contact;
-  background: grey;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  margin-top: 2em;
+  text-align: center;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  p {
+    font-size: 1.2rem;
+  }
 
-    p {
-      font-size: 1.8em;
-    }
+  input {
+    margin-top: 1rem;
+    max-width: 250px;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background: white;
+    color: rgb(93, 93, 93);
+  }
 
-    input {
-      background: transparent;
-      border: 4px solid white;
-      width: 100%;
-      font-size: 1.4em;
-      padding: .6em 0 .6em .8em;
-      margin: 1.4rem 0;
-      color: white;
-    }
+  ::placeholder {
+    color: rgb(93, 93, 93);
+  }
 
-    ::placeholder {
-      color: white;
-    }
-
-    button {
-      background: white;
-      border: none;
-      color: black;
-      font-size: 1.4em;
-      padding: .4em .8em;
-    }
+  button {
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background: var(--light-blue);
+    color: black;
+    font-weight: bold;
   }
 }
 

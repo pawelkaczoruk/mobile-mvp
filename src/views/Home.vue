@@ -88,10 +88,20 @@ export default {
     },
 
     touchStart(e) {
-      const ignore = document.getElementsByClassName('menu-point');
+      const ignore = document.getElementsByClassName('menu-point'),
+            ignore2 = document.getElementsByTagName('input'),
+            ignore3 = document.getElementsByClassName('submit');
       
       for(let i=0; i< ignore.length; i++) {
         if(e.target === ignore[i] || ignore[i].contains(e.target)) return;
+      }
+
+      for(let i=0; i< ignore2.length; i++) {
+        if(e.target === ignore2[i] || ignore2[i].contains(e.target)) return;
+      }
+
+      for(let i=0; i< ignore3.length; i++) {
+        if(e.target === ignore3[i] || ignore3[i].contains(e.target)) return;
       }
       
       e.preventDefault();
@@ -138,6 +148,10 @@ export default {
 
 <style lang="scss" scoped>
 
+.home {
+  background: var(--main-background-color);
+}
+
 .fullpage {
   height: 100vh;
   width: 100%
@@ -152,17 +166,17 @@ export default {
   .menu-point {
     width: .8rem;
     height: .8rem;
-    background: var(--text-color);
+    background: var(--dark-blue);
     display: block;
     margin: 1rem 0;
     outline: none;
     border: none;
     border-radius: 50%;
-    opacity: .6;
     transition: .4s ease all;
+    cursor: pointer;
 
     &.active {
-      opacity: 1;
+      background: var(--light-blue);
       transform: scale(1.5);
     }
   } 
