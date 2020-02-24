@@ -1,21 +1,31 @@
 <template>
   <section class="project">
-    <div class="image-content">
+
+    <div class="video-content">
       <img :src="app.image" :alt="`${app.name} image`">
     </div>
-    <div class="features-content">
-      <h2>{{ app.name }}</h2>
-      <ul>
-        <li :key="i" v-for="(feature, i) in app.features">{{ feature }}</li>
-      </ul>
+
+    <div class="column">
+
+      <div class="features-content">
+        <div class="features-container">
+          <h2>{{ app.name }}</h2>
+          <ul>
+            <li :key="i" v-for="(feature, i) in app.features">{{ feature }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <p>Get in touch with us</p>
+          <input type="email" name="email" placeholder="Your e-mail adress...">
+          <button class="submit">SEND!</button>
+        </form>
+      </div>
+
     </div>
-    <div class="contact-form">
-      <form>
-        <p>Get in touch with us</p>
-        <input type="email" name="email" placeholder="Your e-mail adress...">
-        <button class="submit">SEND!</button>
-      </form>
-    </div>
+
   </section>
 </template>
 
@@ -31,12 +41,38 @@ export default {
 .project {
   max-width: 300px;
   margin: 0 auto;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.image-content {
+.video-content {
   height: 150px;
   overflow: hidden;
   text-align: center;
+
+  @media only screen and (min-width: 768px) {
+    height: unset;
+    margin-right: 2rem;
+
+    img {
+      border-radius: 1.2rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    margin-right: 3rem;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .features-content {
@@ -52,6 +88,35 @@ export default {
 
     li {
       line-height: 1.5em;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 0;
+
+    h2 {
+      text-align: left;
+    }
+
+    ul {
+      margin-right: 0;
+    }
+
+    .features-container {
+      background: var(--second-background-color);
+      max-width: 400px;
+      height: calc(500px - 2rem - 120px);
+      padding: 1rem 2rem;
+      border-radius: 1.2rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .features-container {
+      max-width: 500px;
+      height: calc(500px - 3rem - 152px);
+      padding: 2rem 3rem;
+      border-radius: 1.2rem;
     }
   }
 }
@@ -86,6 +151,31 @@ export default {
     background: var(--light-blue);
     color: black;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 2rem;
+    
+    form {
+      background: var(--second-background-color);
+      max-width: 400px;
+      padding: 1rem 2rem;
+      border-radius: 1.2rem;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    margin-top: 3rem;
+
+    form {
+      max-width: 500px;
+      padding: 2rem 3rem;
+    }
   }
 }
 
