@@ -1,10 +1,12 @@
 <template>
   <div class="home">
+
     <Project 
       class="fullpage"
       :key="i"
       v-for="(el,i) in apps"
       :app="el"/>
+
     <div class="sections-menu">
       <button
         class="menu-point"
@@ -14,6 +16,7 @@
         :key="index">
       </button>
     </div>
+    
   </div>
 </template>
 
@@ -31,7 +34,8 @@ export default {
       inMove: false,
       activeSection: 0,
       offsets: [],
-      touchStartY: 0
+      touchStartY: 0,
+      isModalOpen: true
     }
   },
   methods: {
@@ -153,7 +157,8 @@ export default {
 }
 
 .fullpage {
-  height: 100vh;
+  height: 100vh; // fallback for browsers that do not support custom properties
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%
 }
 

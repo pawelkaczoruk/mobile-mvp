@@ -1,9 +1,13 @@
 <template>
   <section class="project">
 
-    <div class="video-content">
-      <img :src="app.image" :alt="`${app.name} image`">
-    </div>
+    <video 
+      autoplay
+      muted
+      loop
+      :src="app.video">
+      Your browser doesn't allow to open video files 
+    </video>
 
     <div class="column">
 
@@ -16,12 +20,13 @@
         </div>
       </div>
 
-      <div class="contact-form">
-        <form>
-          <p>Get in touch with us</p>
+      <div class="contact-container">
+        <form v-if="false">
+          <h2>Get in touch with us</h2>
           <input type="email" name="email" placeholder="Your e-mail adress...">
           <button class="submit">SEND!</button>
         </form>
+        <button id="modal-btn">Get in touch</button>
       </div>
 
     </div>
@@ -39,96 +44,45 @@ export default {
 <style lang="scss" scoped>
 
 .project {
-  max-width: 300px;
-  margin: 0 auto;
-
-  @media only screen and (min-width: 768px) {
-    max-width: 1920px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  max-width: 1920px;
 }
 
-.video-content {
-  height: 150px;
-  overflow: hidden;
-  text-align: center;
-
-  @media only screen and (min-width: 768px) {
-    height: unset;
-    margin-right: 2rem;
-
-    img {
-      border-radius: 1.2rem;
-    }
-  }
-
-  @media only screen and (min-width: 1024px) {
-    margin-right: 3rem;
-  }
+video {
+  width: 100%;  
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 0 1rem;
 }
 
 .features-content {
-  margin-top: 2em;
+  margin-top: .5rem;
+  min-height: 9rem;
 
   h2 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.25rem;
   }
 
   ul {
-    margin: 1rem 2.5rem 0 2.5rem;
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     li {
+      font-size: .875rem;
       line-height: 1.5em;
-    }
-  }
-
-  @media only screen and (min-width: 768px) {
-    margin-top: 0;
-
-    h2 {
-      text-align: left;
-    }
-
-    ul {
-      margin-right: 0;
-    }
-
-    .features-container {
-      background: var(--second-background-color);
-      max-width: 400px;
-      height: calc(500px - 2rem - 120px);
-      padding: 1rem 2rem;
-      border-radius: 1.2rem;
-    }
-  }
-
-  @media only screen and (min-width: 1024px) {
-    .features-container {
-      max-width: 500px;
-      height: calc(500px - 3rem - 152px);
-      padding: 2rem 3rem;
-      border-radius: 1.2rem;
+      list-style: disc inside none;
     }
   }
 }
 
-.contact-form {
-  margin-top: 2em;
-  text-align: center;
+.contact-container {
+  margin-top: 1rem;
 
-  p {
-    font-size: 1.2rem;
+  h2 {
+    font-size: 1.125rem;
   }
-
+/*
   input {
     margin-top: 1rem;
     max-width: 250px;
@@ -142,11 +96,11 @@ export default {
   ::placeholder {
     color: rgb(93, 93, 93);
   }
-
+*/
   button {
-    padding: 1rem;
-    margin-left: 1rem;
-    border-radius: 1rem;
+    font-size: 1rem;
+    height: 3rem;
+    border-radius: .5rem;
     border: none;
     background: var(--light-blue);
     color: black;
@@ -154,28 +108,9 @@ export default {
     cursor: pointer;
   }
 
-  @media only screen and (min-width: 768px) {
-    margin-top: 2rem;
-    
-    form {
-      background: var(--second-background-color);
-      max-width: 400px;
-      padding: 1rem 2rem;
-      border-radius: 1.2rem;
-
-      p {
-        text-align: left;
-      }
-    }
-  }
-
-  @media only screen and (min-width: 1024px) {
-    margin-top: 3rem;
-
-    form {
-      max-width: 500px;
-      padding: 2rem 3rem;
-    }
+  #modal-btn {
+    width: 100%;
+    margin: 0 auto;
   }
 }
 

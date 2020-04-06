@@ -22,28 +22,47 @@ export default {
             'feature 2',
             'feature 3',
             'feature 4',
+            'feature 5',
+            'feature 6',
+            'feature 7',
+            'feature 8',
+            'feature 9',
+            'feature 10',
+            'feature 11'
           ],
-          image: 'https://via.placeholder.com/300x500.png'
+          video: require('@/assets/videos/app1.mp4')
         },
         {
           name: 'MVP APP 2',
           features: [
             'feature 1',
-            'feature 2',
+            'feature 2'
           ],
-          image: 'https://via.placeholder.com/300x500.png'
+          video: require('@/assets/videos/app1.mp4')
         },
         {
           name: 'MVP APP 3',
           features: [
             'feature 1',
             'feature 2',
-            'feature 3',
+            'feature 3'
           ],
-          image: 'https://via.placeholder.com/300x500.png'
+          video: require('@/assets/videos/app1.mp4')
         }
       ]
     }
+  },
+  created() {
+    //          STYLES
+    // get viewport height, multiple it to get value for vh unit. Set the value in --vh custom property
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // same script when window is resized
+    window.addEventListener('resize', () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+
   }
 }
 </script>
