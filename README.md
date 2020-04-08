@@ -1,24 +1,18 @@
-# mobile-mvp
+<h1 align="center">mobile-mvp</h1>
 
-## Project setup
-```
-npm install
-```
+## 1. Info
+[Live](https://modest-yonath-97d0c4.netlify.com/) version.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 2. Set up project
+    git clone https://github.com/pawelkaczoruk/mobile-mvp.git && cd mk-website
+    npm install
+    npm run serve
+    
+#### Production build
+    npm run build
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 3. Tech stack:
+* Vue.js
+* HTML
+* JS
+* CSS/SCSS
