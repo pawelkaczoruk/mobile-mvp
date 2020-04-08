@@ -4,7 +4,7 @@
 [Live](https://modest-yonath-97d0c4.netlify.com/) version.
 
 ## 2. Set up project
-    git clone https://github.com/pawelkaczoruk/mobile-mvp.git && cd mk-website
+    git clone https://github.com/pawelkaczoruk/mobile-mvp.git && cd mobile-mvp
     npm install
     npm run serve
     
