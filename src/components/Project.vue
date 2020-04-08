@@ -26,7 +26,12 @@
           <input type="email" name="email" placeholder="Your e-mail adress...">
           <button class="submit">SEND!</button>
         </form>
-        <button id="modal-btn">Get in touch</button>
+        <button 
+          class="scroll-btn" 
+          @touchstart="$emit('scroll-to-contact')" 
+          @click="$emit('scroll-to-contact')">
+          Get in touch
+        </button>
       </div>
 
     </div>
@@ -45,6 +50,7 @@ export default {
 
 .project {
   max-width: 1920px;
+  overflow: hidden;
 }
 
 video {
@@ -52,12 +58,12 @@ video {
 }
 
 .column {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 
 .features-content {
   margin-top: .5rem;
-  min-height: 9rem;
+  min-height: 7rem;
 
   h2 {
     font-size: 1.25rem;
@@ -82,21 +88,7 @@ video {
   h2 {
     font-size: 1.125rem;
   }
-/*
-  input {
-    margin-top: 1rem;
-    max-width: 250px;
-    padding: 1rem;
-    border-radius: 1rem;
-    border: none;
-    background: white;
-    color: rgb(93, 93, 93);
-  }
 
-  ::placeholder {
-    color: rgb(93, 93, 93);
-  }
-*/
   button {
     font-size: 1rem;
     height: 3rem;
@@ -108,7 +100,7 @@ video {
     cursor: pointer;
   }
 
-  #modal-btn {
+  .scroll-btn {
     width: 100%;
     margin: 0 auto;
   }

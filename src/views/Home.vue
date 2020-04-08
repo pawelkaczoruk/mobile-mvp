@@ -5,37 +5,44 @@
       class="fullpage"
       :key="i"
       v-for="(el,i) in apps"
-      :app="el"/>
+      :app="el"
+      @scroll-to-contact="scrollToSection(offsets.length - 1)" />
+
+    <ContactForm class="fullpage" />
 
     <div class="sections-menu">
       <button
         class="menu-point"
         :class="{active: activeSection == index}"
         @click="scrollToSection(index)"
+        @touchstart="scrollToSection(index)"
         v-for="(offset,index) in offsets"
         :key="index">
       </button>
     </div>
+
     
+
   </div>
 </template>
 
 <script>
 import Project from '../components/Project'
+import ContactForm from '../components/ContactForm'
 
 export default {
   name: 'Home',
   props: ['apps'],
   components: {
-    Project
+    Project,
+    ContactForm
   },
   data() {
     return {
       inMove: false,
       activeSection: 0,
       offsets: [],
-      touchStartY: 0,
-      isModalOpen: true
+      touchStartY: 0
     }
   },
   methods: {
@@ -62,7 +69,7 @@ export default {
       }, 400);
     },
 
-    handleMouseWheel: function(e) {
+    handleMouseWheel(e) {
       if(e.wheelDelta < 30 && !this.inMove) {
         this.moveUp();
       } else if(e.wheelDelta > 30 && !this.inMove) {
@@ -92,20 +99,19 @@ export default {
     },
 
     touchStart(e) {
-      const ignore = document.getElementsByClassName('menu-point'),
-            ignore2 = document.getElementsByTagName('input'),
-            ignore3 = document.getElementsByClassName('submit');
+      let ignore = [];
+      const ignore1 = document.getElementsByTagName('input'),
+            ignore2 = document.getElementsByTagName('label'),
+            ignore3 = document.getElementsByTagName('textarea');
       
+      ignore = [
+        ...ignore1,
+        ...ignore2,
+        ...ignore3
+      ];
+
       for(let i=0; i< ignore.length; i++) {
         if(e.target === ignore[i] || ignore[i].contains(e.target)) return;
-      }
-
-      for(let i=0; i< ignore2.length; i++) {
-        if(e.target === ignore2[i] || ignore2[i].contains(e.target)) return;
-      }
-
-      for(let i=0; i< ignore3.length; i++) {
-        if(e.target === ignore3[i] || ignore3[i].contains(e.target)) return;
       }
       
       e.preventDefault();
@@ -127,7 +133,7 @@ export default {
   },
   mounted() {
     this.calculateSectionOffsets();
-
+    
     window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM); // firefox
     window.addEventListener('mousewheel', this.handleMouseWheel, {
       passive: false
@@ -138,6 +144,8 @@ export default {
     window.addEventListener('touchmove', this.touchMove, {
       passive: false
     }); // mobile devices
+
+
   },
   destroyed() {
     window.removeEventListener('DOMMouseScroll', this.handleMouseWheelDOM); // firefox
@@ -164,7 +172,7 @@ export default {
 
 .sections-menu {
   position: fixed;
-  right: 1rem;
+  right: .4rem;
   top: 50%;
   transform: translateY(-50%);
 
