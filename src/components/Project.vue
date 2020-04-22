@@ -1,13 +1,16 @@
 <template>
   <section class="project">
 
-    <video 
-      autoplay
-      muted
-      loop
-      :src="app.video">
-      Your browser doesn't allow to open video files 
-    </video>
+    <div class="video-container">
+      <video 
+        autoplay
+        muted
+        loop
+        :src="app.video">
+        Your browser doesn't allow to open video files 
+      </video>
+    </div>
+
 
     <div class="column">
 
@@ -21,17 +24,7 @@
       </div>
 
       <div class="contact-container">
-        <form v-if="false">
-          <h2>Get in touch with us</h2>
-          <input type="email" name="email" placeholder="Your e-mail adress...">
-          <button class="submit">SEND!</button>
-        </form>
-        <button 
-          class="scroll-btn" 
-          @touchstart="$emit('scroll-to-contact')" 
-          @click="$emit('scroll-to-contact')">
-          Get in touch
-        </button>
+        <button @click="$emit('scroll-down')">Get in touch</button>
       </div>
 
     </div>
@@ -51,19 +44,53 @@ export default {
 .project {
   max-width: 1920px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (orientation: landscape) {
+    flex-direction: row;
+  }
 }
 
-video {
-  width: 100%;  
+.video-container {
+  video {
+    width: 100%;
+  }
+
+  @media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 8/10) and (orientation: portrait) {
+    height: 75%;
+    overflow: hidden;
+    position: relative;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+    }
+  }
+
+  @media screen and (min-width: 500px) and (orientation: landscape) {
+    video {
+      width: auto;
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+    }
+    
+  }
 }
+
 
 .column {
   margin: 0 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .features-content {
-  margin-top: .5rem;
-  min-height: 7rem;
+  margin-top: 1rem;
+  flex: 1;
 
   h2 {
     font-size: 1.25rem;
@@ -79,15 +106,15 @@ video {
       line-height: 1.5em;
       list-style: disc inside none;
     }
+
+    @media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 10/16) and (orientation: portrait) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
 
 .contact-container {
-  margin-top: 1rem;
-
-  h2 {
-    font-size: 1.125rem;
-  }
+  margin: 1rem 0;
 
   button {
     font-size: 1rem;
@@ -98,11 +125,8 @@ video {
     color: black;
     font-weight: bold;
     cursor: pointer;
-  }
-
-  .scroll-btn {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto;    
   }
 }
 

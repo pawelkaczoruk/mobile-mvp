@@ -7,3 +7,10 @@
   --light-blue: rgb(65, 208, 216);
   --dark-blue: rgb(0, 43, 60);
 }
+
+
+@media screen and (min-height: 750px) and (orientation: portrait) {
+  :root {
+    --font-size: 18px;
+  }
+}

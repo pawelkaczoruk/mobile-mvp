@@ -11,7 +11,6 @@
         type="email">
       <p v-if="!isEmailValid">Please use correct Email format</p>
 
-
       <label for="message">Message:</label>
       <textarea 
         v-model="message" 
@@ -19,10 +18,7 @@
       </textarea>
       <p v-if="!isMessageValid">Your message is too short</p>
       
-      <button 
-        @touchstart="sendMail()"
-        @click="sendMail()">Send
-      </button>
+      <button>Send</button>
     </form>
 
   </div>
