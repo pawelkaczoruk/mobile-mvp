@@ -14,3 +14,9 @@
     --font-size: 18px;
   }
 }
+
+@media screen and (min-height: 560px) and (max-aspect-ratio: 1366/600) and (min-aspect-ratio: 1/1) and (orientation: landscape) {
+  :root {
+    --font-size: 22px;
+  }
+}

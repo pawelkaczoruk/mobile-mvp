@@ -100,6 +100,7 @@ export default {
     margin-top: .5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
 
     li {
       font-size: .875rem;
@@ -109,6 +110,15 @@ export default {
 
     @media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 10/16) and (orientation: portrait) {
       grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-aspect-ratio: 1024/600) and (min-aspect-ratio: 1/1) and (orientation: landscape) {
+      grid-template-columns: 1fr;
+      grid-row-gap: .3rem;
+    }
+
+    @media screen and (min-height: 560px) and (max-aspect-ratio: 1366/600) and (min-aspect-ratio: 1024/600) and (orientation: landscape) {
+      grid-row-gap: .2rem;
     }
   }
 }
