@@ -1,12 +1,23 @@
 <template>
   <div class="home">
 
-    <Project 
-      class="fullpage"
-      :key="i"
-      v-for="(el,i) in apps"
-      :app="el"/>
-    <ContactForm class="fullpage" />
+    <full-page ref="fullpage" :options="options" id="fullpage">
+      <div
+        class="section"
+        :data-anchor="el.name.replace(/\s/g, '_')"
+        :key="i"
+        v-for="(el, i) in apps">
+        <Project 
+        class="fullpage"
+        :app="el" 
+        @scroll-down="$refs.fullpage.api.moveTo('contact')" />
+      </div>
+      <div 
+        class="section"
+        data-anchor="contact">
+        <ContactForm class="fullpage" />
+      </div>
+    </full-page>
 
   </div>
 </template>
@@ -21,7 +32,17 @@ export default {
     Project,
     ContactForm
   },
-  props: ['apps']
+  props: ['apps'],
+  data() {
+    return {
+      options: {
+        licenseKey: '^IFcycI&u3',
+        menu: '#menu',
+        navigation: true,
+        navigationPosition: 'right'
+      }
+    }
+  }
 }
 </script>
 

@@ -3,6 +3,7 @@
 
     <div class="video-container">
       <video 
+        data-keepplaying
         autoplay
         muted
         loop
@@ -42,7 +43,6 @@ export default {
 <style lang="scss" scoped>
 
 .project {
-  max-width: 1920px;
   overflow: hidden;
   display: flex;
   flex-direction: column;

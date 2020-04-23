@@ -16,6 +16,7 @@ export default {
     return {
       apps: [
         {
+          id: 'MVPapp1',
           name: 'MVP APP 1',
           features: [
             'feature 1',
@@ -33,6 +34,7 @@ export default {
           video: require('@/assets/videos/app1.mp4')
         },
         {
+          id: 'MVPapp2',
           name: 'MVP APP 2',
           features: [
             'feature 1',
@@ -41,6 +43,7 @@ export default {
           video: require('@/assets/videos/app1.mp4')
         },
         {
+          id: 'MVPapp3',
           name: 'MVP APP 3',
           features: [
             'feature 1',
@@ -74,6 +77,23 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body #fp-nav {
+  margin-right: -10px;
+
+  ul li {
+    margin: .75rem;
+    margin-right: 0;
+  }
+
+  ul li a span {
+    background: rgba(255, 255, 255, .6);
+  }
+
+  ul li a.active span {
+    background: white;
+  }
 }
 
 </style>
