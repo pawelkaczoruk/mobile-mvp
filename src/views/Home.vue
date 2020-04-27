@@ -12,10 +12,10 @@
         :app="el" 
         @scroll-down="$refs.fullpage.api.moveTo('contact')" />
       </div>
-      <div 
-        class="section"
+      <div
+        class="section" 
         data-anchor="contact">
-        <ContactForm class="fullpage" />
+        <Contact />
       </div>
     </full-page>
 
@@ -24,13 +24,13 @@
 
 <script>
 import Project from '../components/Project'
-import ContactForm from '../components/ContactForm'
+import Contact from '../components/Contact'
 
 export default {
   name: 'Home',
   components: {
     Project,
-    ContactForm
+    Contact
   },
   props: ['apps'],
   data() {
@@ -39,7 +39,9 @@ export default {
         licenseKey: '^IFcycI&u3',
         menu: '#menu',
         navigation: true,
-        navigationPosition: 'right'
+        navigationPosition: 'right',
+        scrollOverflow: true,
+        scrollBar: true
       }
     }
   }
