@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <main class="home">
 
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div
@@ -15,11 +15,11 @@
       <div
         class="section" 
         data-anchor="contact">
-        <Contact />
+        <Contact class="fullpage" />
       </div>
     </full-page>
 
-  </div>
+  </main>
 </template>
 
 <script>
@@ -39,9 +39,7 @@ export default {
         licenseKey: '^IFcycI&u3',
         menu: '#menu',
         navigation: true,
-        navigationPosition: 'right',
-        scrollOverflow: true,
-        scrollBar: true
+        navigationPosition: 'right'
       }
     }
   }
