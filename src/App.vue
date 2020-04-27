@@ -31,7 +31,7 @@ export default {
             'feature 10',
             'feature 11'
           ],
-          video: require('@/assets/videos/app1.mp4')
+          video: require('@/assets/videos/app2.mp4')
         },
         {
           id: 'MVPapp2',
@@ -50,7 +50,7 @@ export default {
             'feature 2',
             'feature 3'
           ],
-          video: require('@/assets/videos/app1.mp4')
+          video: require('@/assets/videos/app2.mp4')
         }
       ]
     }

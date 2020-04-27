@@ -85,14 +85,15 @@ button {
   }
 
   @media screen and (orientation: landscape) {
-    width: 100%;
-    justify-content: space-around;
     top: 50%;
-    margin-top: 0;
-    transform: translate(-50%, -50%);
+    left: 80%;
 
     a:first-child {
-      margin-right: 6rem;
+      margin-right: .5rem;
+    }
+
+    img {
+      height: 7rem;
     }
   }
 }
@@ -112,6 +113,10 @@ button {
 
   img {
     width: 12rem;
+  }
+
+  @media screen and (orientation: landscape) {
+    left: 20%;
   }
 }
 
