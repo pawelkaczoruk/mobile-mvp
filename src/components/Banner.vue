@@ -80,9 +80,8 @@ export default {
     width: 1.5rem;
     transform: translate(-50%, -90%);
     cursor: pointer;
-    animation-name: flow;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
+    animation: flow 1s infinite;
+    animation-timing-function: ease-in-out;
 
     img {
       width: 100%;
@@ -90,9 +89,9 @@ export default {
   }
 
   @keyframes flow {
-    0% { top: 90%; }
-    35% { top: 93%; }
-    100% { top: 90%; }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(30%); }
+    50% { transform: translateY(30%); }
   }
 }
 

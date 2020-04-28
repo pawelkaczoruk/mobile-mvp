@@ -10,6 +10,11 @@
         :src="app.video">
         Your browser doesn't allow to open video files 
       </video>
+
+      <div class="stores">
+        <a href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
+        <a href="#"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
+      </div>
     </div>
 
 
@@ -53,6 +58,8 @@ export default {
 }
 
 .video-container {
+  position: relative;
+
   video {
     width: 100%;
   }
@@ -136,7 +143,31 @@ export default {
     font-weight: bold;
     cursor: pointer;
     width: 100%;
-    margin: 0 auto;    
+    margin: 0 auto;
+  }
+}
+
+.stores {
+  position: absolute;
+  z-index: 10;
+  top: 1%;
+  left: 1%;
+  transform: translate(-1%, -1%);
+
+  img {
+    width: 5rem;
+    margin: 0;
+    vertical-align: top;
+  }
+
+  a {
+    user-select: none;
+    display: block;
+    height: auto;
+  }
+
+  a:first-child {
+    margin-bottom: .1rem;
   }
 }
 
