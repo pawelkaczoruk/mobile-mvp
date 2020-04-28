@@ -138,12 +138,20 @@ export default {
     height: 3rem;
     border-radius: .5rem;
     border: none;
-    background: var(--light-blue);
     color: black;
     font-weight: bold;
     cursor: pointer;
     width: 100%;
     margin: 0 auto;
+    background: var(--light-blue);
+
+    @media screen and (min-width: 1024px) {
+      transition: background .2s ease;
+
+      &:hover {
+        background: var(--hover-color);
+      }
+    }
   }
 }
 

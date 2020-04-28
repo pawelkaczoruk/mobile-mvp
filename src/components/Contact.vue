@@ -60,12 +60,20 @@ button {
   height: 3rem;
   border-radius: .5rem;
   border: none;
-  background: var(--light-blue);
   color: black;
   font-weight: bold;
   cursor: pointer;
   width: 15rem;
   margin: 0 auto;
+  background: var(--light-blue);
+
+  @media screen and (min-width: 1024px) {
+    transition: background .2s ease;
+
+    &:hover {
+      background: var(--hover-color);
+    }
+  }
 }
 
 .social {
@@ -123,6 +131,14 @@ button {
 a {
   user-select: none;
   display: block;
+
+  @media screen and (min-width: 1024px) {
+    transition: transform .2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 </style>

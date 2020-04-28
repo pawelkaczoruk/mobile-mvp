@@ -89,8 +89,8 @@ export default {
   }
 
   @keyframes flow {
-    0%, 5%, 95%, 100% { transform: translateY(0); }
-    50% { transform: translateY(30%); }
+    0%, 5%, 95%, 100% { transform: translateY(-30%); }
+    50% { transform: translateY(0); }
   }
 }
 
