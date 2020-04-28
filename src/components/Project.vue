@@ -172,6 +172,14 @@ export default {
     user-select: none;
     display: block;
     height: auto;
+
+    @media screen and (min-width: 1024px) {
+      transition: transform .2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
 
   a:first-child {

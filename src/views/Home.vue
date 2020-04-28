@@ -48,7 +48,8 @@ export default {
         licenseKey: '^IFcycI&u3',
         menu: '#menu',
         navigation: true,
-        navigationPosition: 'right'
+        navigationPosition: 'right',
+        lockAnchors: true
       }
     }
   }

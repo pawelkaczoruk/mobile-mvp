@@ -1,7 +1,8 @@
 <template>
   <footer class="contact">
     <div class="wrapper">
-      <button>Email me</button>
+      <button @click="copy('contact@mobilemvp.com')">{{ text }}</button>
+      <p v-if="showInfo">Email copied to clipboard</p>
 
       <div class="stores">
         <a href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
@@ -21,6 +22,30 @@
 <script>
 export default {
   name: 'Contact',
+  data() {
+    return {
+      showInfo: false,
+      text: 'Email me'
+    }
+  },
+  methods: {
+    copy(str) {
+      const el = document.createElement('textarea');
+
+      el.value = str;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      
+      this.text = str;
+      this.showInfo = true;
+
+      setTimeout(() => {
+        this.showInfo = false
+      }, 3000);
+    }
+  }
 }
 </script>
 
@@ -36,6 +61,11 @@ export default {
   text-align: center;
   position: relative;
   z-index: 10;
+
+  p {
+    margin-top: .5rem;
+    font-size: .7rem;
+  }
 
   @media screen and (orientation: landscape) {
     padding: 1rem .5rem;
