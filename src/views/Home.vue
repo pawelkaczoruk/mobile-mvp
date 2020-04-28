@@ -2,6 +2,13 @@
   <main class="home">
 
     <full-page ref="fullpage" :options="options" id="fullpage">
+      <div 
+        data-anchor="banner"
+        class="section">
+        <Banner 
+          class="fullpage" 
+          @move-next="$refs.fullpage.api.moveSectionDown()" />
+      </div>
       <div
         class="section"
         :data-anchor="el.name.replace(/\s/g, '_')"
@@ -25,12 +32,14 @@
 <script>
 import Project from '../components/Project'
 import Contact from '../components/Contact'
+import Banner from '../components/Banner'
 
 export default {
   name: 'Home',
   components: {
     Project,
-    Contact
+    Contact,
+    Banner
   },
   props: ['apps'],
   data() {

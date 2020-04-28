@@ -38,19 +38,10 @@ export default {
           name: 'MVP APP 2',
           features: [
             'feature 1',
-            'feature 2'
-          ],
-          video: require('@/assets/videos/app1.mp4')
-        },
-        {
-          id: 'MVPapp3',
-          name: 'MVP APP 3',
-          features: [
-            'feature 1',
             'feature 2',
             'feature 3'
           ],
-          video: require('@/assets/videos/app2.mp4')
+          video: require('@/assets/videos/app1.mp4')
         }
       ]
     }
@@ -94,6 +85,10 @@ body #fp-nav {
   ul li a.active span {
     background: white;
   }
+}
+
+.fp-viewing-banner #fp-nav{
+   display: none;
 }
 
 </style>
