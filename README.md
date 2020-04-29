@@ -16,3 +16,4 @@
 * HTML
 * JS
 * CSS/SCSS
+* fullpage.js
