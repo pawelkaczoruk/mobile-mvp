@@ -16,7 +16,6 @@ export default {
     return {
       apps: [
         {
-          id: 'MVPapp1',
           name: 'MVP APP 1',
           features: [
             'feature 1',
@@ -34,7 +33,6 @@ export default {
           video: require('@/assets/videos/app2.mp4')
         },
         {
-          id: 'MVPapp2',
           name: 'MVP APP 2',
           features: [
             'feature 1',
@@ -70,6 +68,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// fullpage.js styling
 body #fp-nav {
   margin-right: -10px;
 
@@ -89,6 +88,41 @@ body #fp-nav {
 
 .fp-viewing-banner #fp-nav{
    display: none;
+} // end of fullpage.js styling
+
+// styles for repetitive elements
+.contact-button {
+  font-size: 1rem;
+  height: 3rem;
+  border-radius: .5rem;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--light-blue);
+
+  @media screen and (min-width: 1024px) {
+    transition: background .2s ease;
+
+    &:hover {
+      background: var(--hover-color);
+    }
+  }
+}
+
+.link { // anchors
+  user-select: none;
+  display: block;
+
+  @media screen and (min-width: 1024px) {
+    transition: transform .2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 </style>

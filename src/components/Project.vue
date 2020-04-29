@@ -12,8 +12,8 @@
       </video>
 
       <div class="stores">
-        <a href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
-        <a href="#"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
+        <a class="link" href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
+        <a class="link" href="#"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
       </div>
     </div>
 
@@ -30,7 +30,7 @@
       </div>
 
       <div class="contact-container">
-        <button @click="$emit('scroll-down')">Get in touch</button>
+        <button class="contact-button" @click="$emit('scroll-down')">Get in touch</button>
       </div>
 
     </div>
@@ -87,7 +87,6 @@ export default {
   }
 }
 
-
 .column {
   margin: 0 1.5rem;
   flex: 1;
@@ -132,27 +131,6 @@ export default {
 
 .contact-container {
   margin: 1rem 0;
-
-  button {
-    font-size: 1rem;
-    height: 3rem;
-    border-radius: .5rem;
-    border: none;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    margin: 0 auto;
-    background: var(--light-blue);
-
-    @media screen and (min-width: 1024px) {
-      transition: background .2s ease;
-
-      &:hover {
-        background: var(--hover-color);
-      }
-    }
-  }
 }
 
 .stores {
@@ -168,22 +146,17 @@ export default {
     vertical-align: top;
   }
 
-  a {
-    user-select: none;
-    display: block;
-    height: auto;
-
-    @media screen and (min-width: 1024px) {
-      transition: transform .2s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-  }
-
   a:first-child {
     margin-bottom: .1rem;
+  }
+}
+
+// override global styles
+.link {
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 

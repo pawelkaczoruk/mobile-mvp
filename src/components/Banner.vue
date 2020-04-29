@@ -75,22 +75,22 @@ export default {
   .arrow-icon {
     user-select: none;
     position: absolute;
+    display: block;
     top: 90%;
-    left: 50%;    
-    width: 1.5rem;
+    left: 50%;
     transform: translate(-50%, -90%);
     cursor: pointer;
     animation: flow 1s infinite;
     animation-timing-function: ease-in-out;
 
     img {
-      width: 100%;
+      width: 1.5rem;
     }    
   }
 
   @keyframes flow {
-    0%, 5%, 95%, 100% { transform: translateY(-30%); }
-    50% { transform: translateY(0); }
+    0%, 5%, 95%, 100% { transform: translate(-50%, -90%); }
+    50% { transform: translate(-50%, -60%); }
   }
 }
 
