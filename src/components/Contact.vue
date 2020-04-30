@@ -1,5 +1,6 @@
 <template>
   <footer class="contact">
+
     <div class="wrapper">
       <button class="contact-button" @click="copy('contact@mobilemvp.com')">{{ text }}</button>
       <p v-if="showInfo">Email copied to clipboard</p>
@@ -21,9 +22,21 @@
           <img src="../assets/images/ig.png" alt="Instagram icon">
         </a>
       </div>
-
     </div>
-    <img class="bottom-bg" src="../assets/images/bottomPath.svg" alt="">
+
+    <img 
+      ref="bg"
+      @load="resizeCanvas()" 
+      class="bottom-bg" 
+      src="../assets/images/bottomPath.svg" 
+      alt="">
+
+    <canvas
+      ref="canvas"
+      :height="canvas.height"
+      :width="canvas.width">
+    </canvas>  
+
   </footer>
 </template>
 
@@ -33,7 +46,11 @@ export default {
   data() {
     return {
       showInfo: false,
-      text: 'Email me'
+      text: 'Email me',
+      canvas: {
+        height: 0,
+        width: 0
+      }
     }
   },
   methods: {
@@ -52,7 +69,94 @@ export default {
       setTimeout(() => {
         this.showInfo = false
       }, 3000);
+    },
+
+    resizeCanvas() {
+      this.canvas.height = this.$refs.bg.clientHeight;
+      this.canvas.width = this.$refs.bg.clientWidth;
+
+      // draw canvas in next tick 
+      const that = this;
+
+      this.$nextTick(() => {
+        that.draw();
+      });
+    },
+
+    draw() {
+      const canvas = this.$refs.canvas,
+            ctx = canvas.getContext('2d'),
+            maxVel = {
+              x: canvas.width / 5000,
+              y: canvas.width / 6000,
+            };
+      let size;
+      let vel = {
+        x: maxVel.x,
+        y: 0
+      };
+      let pos = {
+        x: 0,
+        y: canvas.height / 7
+      };
+
+      // continue if WebGL is available and working
+      if(ctx === null) return;
+
+      function update() {
+        // clear and draw on canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.translate(pos.x, pos.y);
+        ctx.rotate(vel.y*60*Math.PI/180);
+        ctx.translate(-pos.x, -pos.y);
+        ctx.drawImage(img, pos.x, pos.y, size.x, size.y);
+        ctx.restore();
+
+
+        // calculate new positions
+        if(pos.x >= canvas.width) pos.x = 0 - size.x;
+
+        if(pos.y + size.y*1/3 < canvas.height / 2 && pos.y >= 0) {
+          vel.y = vel.y + 0.001 * maxVel.y * Math.random();
+        } 
+        if(pos.y > canvas.height / 2 - size.y*1/3 && pos.y <= canvas.height) {
+          vel.y = vel.y - 0.001 * maxVel.y * Math.random();
+        }
+
+        // apply new position
+        const multiplier = Math.random() > 0.4 ? 1 : 0.8;
+        pos.x += vel.x * multiplier;
+        pos.y += vel.y;
+
+        // adjust values if boat is out of range
+        if(pos.y <= 0) {
+          pos.y = 0;
+        } else if(pos.y >= canvas.height) {
+          pos.y = canvas.height;
+        } else if(pos.y + size.y/6 == 0) {
+          vel.y = maxVel.y;
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      // load image and run animation
+      const img = new Image();
+      img.src = require('@/assets/images/boat_vector.svg');
+      
+      img.addEventListener('load', () => {
+        size = {
+          x: canvas.height * 3/5 * 201 / 124,
+          y: canvas.height * 3/5
+        };
+
+        update();
+      });
     }
+  },
+  mounted() {
+    window.addEventListener('resize', this.resizeCanvas, false);
   }
 }
 </script>
@@ -144,9 +248,16 @@ export default {
   }
 }
 
-// override global styles
+canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
 
+// override global styles
 .contact-button {
   width: 15rem;
 }
+
 </style>
