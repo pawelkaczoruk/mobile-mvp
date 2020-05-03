@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '12.6.0'
+script:
+- npm run build
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: "WeS72JgVnzAvu32+AHzU6WPhfO6rX+gOGSqK9mp4v5yqczc/+DzNKhtLl54HFyNzYFNTHcgneeVIu+m3aXoofAR4iBt+8r3sGxMGLlO/Wfc/xf0d97KJ9LpesQxTuIuGNQkkPxUSt+VO/wY7HzL7Zf5C5RM1kJV3iBD1mHvN2yQD/X0xU6RKWcSrdZSo3eDl2zFCYdEqbX9n+Kkf1H8f2YZEqH8d8jzNRG55CYB+aEXagkYxuF24WgYMNkJUMptgsRd+DiDqWHTc01DRDB20njBsNIBpjhmasjL+wkv3m03ms2qoK5C9Wi88dpxQpGEw4ZP5tpr6Qxn60kNR2/xxL7Mg5DgD2k7whT6MqSjp55C0f8Kwa2apZKfyqQVOgY/UXp1RUMj0DIMAoE4XHUYayHjBfR2AZTrKIYIqlg2fAZeQX6rdU3u67/DqspuSiH0eJ44bhUv/zPgTwDmvzjhCrSXbd+zyuXl6dANHAkol+UzEHwMGTZRnkSm0spJoBXkFg7xUHQO04r1RPQ6yWcDhpHQzP6/+E+PckbfNIeR+KaoAtMveehonxP7E3z6ZQPw95XDXUxAInCdokbyfeYn5JDKZ6TX/yYk7ZNL3w8xr7hkhhwLto5x3sZf1zCKD8dIpCkES52gm/5zjIItASnS+4VvnY1U7ls2QX1ZCbX2UaCU="
+message: "Automatic deployment by travis - CI"

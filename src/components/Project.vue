@@ -12,8 +12,16 @@
       </video>
 
       <div class="stores">
-        <a class="link" href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
-        <a class="link" href="#"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
+        <a 
+          class="link" 
+          target="_blank" 
+          rel="noopener"
+          href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
+        <a 
+          class="link" 
+          target="_blank" 
+          rel="noopener"
+          href="#"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
       </div>
     </div>
 
