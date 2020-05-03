@@ -125,4 +125,18 @@ body #fp-nav {
   }
 }
 
+.bg-img {
+  background-image: url('./assets/images/hero-s.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 760px) {
+    background-image: url('./assets/images/hero-m.png');
+  }
+
+  @media screen and (min-width: 1366px) {
+    background-image: url('./assets/images/hero-l.png');
+  }
+}
+
 </style>

@@ -1,42 +1,60 @@
 <template>
-  <footer class="contact">
+  <footer class="contact bg-img">
+    <div class="overlay">
 
-    <div class="wrapper">
-      <button class="contact-button" @click="copy('contact@mobilemvp.com')">{{ text }}</button>
-      <p v-if="showInfo">Email copied to clipboard</p>
+      <div class="wrapper">
+        <button class="contact-button" @click="copy('contact@mobilemvp.com')">{{ text }}</button>
+        <p v-if="showInfo">Email copied to clipboard</p>
 
-      <div class="stores">
-        <a class="link" href="#">
-          <img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge">
-        </a>
-        <a class="link" href="#">
-          <img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge">
-        </a>
+        <div class="stores">
+          <a 
+            class="link" 
+            target="_blank" 
+            rel="noopener"
+            href="#">
+            <img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge">
+          </a>
+          <a 
+            class="link" 
+            target="_blank" 
+            rel="noopener"
+            href="#">
+            <img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge">
+          </a>
+        </div>
+
+        <div class="social">
+          <a 
+            class="link" 
+            target="_blank" 
+            rel="noopener"
+            href="https://www.youtube.com/c/ProFlutter?fbclid=IwAR3Ztuxo411vXrD8chKmDFBKtwNq_Lf-wleAwMlEskoMs6aA0io2-aYRkyM">
+            <img src="../assets/images/yt.png" alt="YouTube icon">
+          </a>
+          <a 
+            class="link" 
+            target="_blank" 
+            rel="noopener"
+            href="#">
+            <img src="../assets/images/ig.png" alt="Instagram icon">
+          </a>
+        </div>
       </div>
 
-      <div class="social">
-        <a class="link" href="#">
-          <img src="../assets/images/yt.png" alt="YouTube icon">
-        </a>
-        <a class="link" href="#">
-          <img src="../assets/images/ig.png" alt="Instagram icon">
-        </a>
-      </div>
+      <img 
+        ref="bg"
+        @load="resizeCanvas()" 
+        class="bottom-bg" 
+        src="../assets/images/bottomPath.svg" 
+        alt="">
+
+      <canvas
+        ref="canvas"
+        :height="canvas.height"
+        :width="canvas.width">
+      </canvas>  
+
     </div>
-
-    <img 
-      ref="bg"
-      @load="resizeCanvas()" 
-      class="bottom-bg" 
-      src="../assets/images/bottomPath.svg" 
-      alt="">
-
-    <canvas
-      ref="canvas"
-      :height="canvas.height"
-      :width="canvas.width">
-    </canvas>  
-
   </footer>
 </template>
 
@@ -165,6 +183,12 @@ export default {
 
 .contact {
   position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 18, 32, .9);
 }
 
 .wrapper {

@@ -1,5 +1,5 @@
 <template>
-  <header class="banner">
+  <header class="banner bg-img">
 
     <div class="overlay">
       <div class="wrapper">
@@ -21,12 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.banner {
-  background-image: url('../assets/images/hero.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .overlay {
   width: 100%;
