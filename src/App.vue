@@ -16,28 +16,24 @@ export default {
     return {
       apps: [
         {
-          name: 'MVP APP 1',
+          name: 'MVP — Minimum Viable Product',
           features: [
-            'feature 1',
-            'feature 2',
-            'feature 3',
-            'feature 4',
-            'feature 5',
-            'feature 6',
-            'feature 7',
-            'feature 8',
-            'feature 9',
-            'feature 10',
-            'feature 11'
+            'stunning design and animations',
+            'video showcase of app',
+            'implementation of key screens',
+            'iOS & Android',
+            'availability on Apple Store & Google Play',
           ],
           video: require('@/assets/videos/app2.mp4')
         },
         {
-          name: 'MVP APP 2',
+          name: 'Full mobile application',
           features: [
-            'feature 1',
-            'feature 2',
-            'feature 3'
+            'implementation of whole app',
+            'backend services and infrastructure',
+            'great looking animations and design of all screens',
+            'release on Apple Store & Google Play',
+            'promo video',
           ],
           video: require('@/assets/videos/app1.mp4')
         }
