@@ -113,17 +113,18 @@ export default {
   ul {
     margin-top: .5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 1rem;
 
     li {
+      margin-left: 1rem;
       font-size: .875rem;
       line-height: 1.5em;
-      list-style: disc inside none;
+      list-style: disc outside none;
     }
 
     @media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 10/16) and (orientation: portrait) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
     @media screen and (max-aspect-ratio: 1024/600) and (min-aspect-ratio: 1/1) and (orientation: landscape) {
@@ -139,6 +140,14 @@ export default {
 
 .contact-container {
   margin: 1rem 0;
+
+  @media screen and (max-width: 650px) and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 650/320) {
+    display: none;
+  }
+
+  @media screen and (max-height: 650px) and (min-aspect-ratio: 320/650) and (max-aspect-ratio: 1/1) {
+    display: none;
+  }
 }
 
 .stores {
