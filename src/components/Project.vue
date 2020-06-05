@@ -16,12 +16,12 @@
           class="link" 
           target="_blank" 
           rel="noopener"
-          href="#"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
+          :href="app.links.googlePlay"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
         <a 
           class="link" 
           target="_blank" 
           rel="noopener"
-          href="#"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
+          :href="app.links.appStore"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
       </div>
     </div>
 

@@ -24,7 +24,11 @@ export default {
             'iOS & Android',
             'availability on Apple Store & Google Play',
           ],
-          video: require('@/assets/videos/app2.mp4')
+          video: require('@/assets/videos/app2.mp4'),
+          links: {
+            appStore: '#',
+            googlePlay:'#'
+          }
         },
         {
           name: 'Full mobile application',
@@ -35,7 +39,11 @@ export default {
             'release on Apple Store & Google Play',
             'promo video',
           ],
-          video: require('@/assets/videos/app1.mp4')
+          video: require('@/assets/videos/app1.mp4'),
+          links: {
+            appStore: '#',
+            googlePlay:'#'
+          }
         }
       ]
     }
