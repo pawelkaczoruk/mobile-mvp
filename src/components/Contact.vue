@@ -3,7 +3,7 @@
     <div class="overlay">
 
       <div class="wrapper">
-        <button class="contact-button" @click="copy('contact@mobilemvp.com')">{{ text }}</button>
+        <button class="contact-button" @click="copy('contact@mobilemvp.app')">{{ text }}</button>
         <p v-if="showInfo">Email copied to clipboard</p>
 
         <div class="stores">
@@ -11,14 +11,14 @@
             class="link" 
             target="_blank" 
             rel="noopener"
-            href="#">
+            href="https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk">
             <img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge">
           </a>
           <a 
             class="link" 
             target="_blank" 
             rel="noopener"
-            href="#">
+            href="https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk">
             <img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge">
           </a>
         </div>
@@ -28,14 +28,14 @@
             class="link" 
             target="_blank" 
             rel="noopener"
-            href="https://www.youtube.com/c/ProFlutter?fbclid=IwAR3Ztuxo411vXrD8chKmDFBKtwNq_Lf-wleAwMlEskoMs6aA0io2-aYRkyM">
+            href="https://www.youtube.com/c/mobilemvpapp/">
             <img src="../assets/images/yt.png" alt="YouTube icon">
           </a>
           <a 
             class="link" 
             target="_blank" 
             rel="noopener"
-            href="#">
+            href="https://www.instagram.com/mobilemvpapp/">
             <img src="../assets/images/ig.png" alt="Instagram icon">
           </a>
         </div>

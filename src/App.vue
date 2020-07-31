@@ -26,8 +26,8 @@ export default {
           ],
           video: require('@/assets/videos/app2.mp4'),
           links: {
-            appStore: '#',
-            googlePlay:'#'
+            appStore: 'https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk',
+            googlePlay:'https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk'
           }
         },
         {
@@ -41,8 +41,8 @@ export default {
           ],
           video: require('@/assets/videos/app1.mp4'),
           links: {
-            appStore: '#',
-            googlePlay:'#'
+            appStore: 'https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk',
+            googlePlay:'https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk'
           }
         }
       ]
