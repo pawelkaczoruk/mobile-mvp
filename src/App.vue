@@ -21,8 +21,7 @@ export default {
             'stunning design and animations',
             'video showcase of app',
             'implementation of key screens',
-            'iOS & Android',
-            'availability on Apple Store & Google Play',
+            'release on Apple App Store & Google Play',
           ],
           video: require('@/assets/videos/app2.mp4'),
           links: {
@@ -31,13 +30,13 @@ export default {
           }
         },
         {
-          name: 'Full mobile application',
+          name: 'Fully-functional mobile application',
           features: [
             'implementation of whole app',
             'backend services and infrastructure',
-            'great looking animations and design of all screens',
-            'release on Apple Store & Google Play',
-            'promo video',
+            'stunning design and animations',
+            'promotional video',
+            'release on Apple App Store & Google Play',
           ],
           video: require('@/assets/videos/app1.mp4'),
           links: {
