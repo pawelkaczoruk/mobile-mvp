@@ -48,11 +48,9 @@ export default {
     }
   },
   created() {
-    //          STYLES
-    // get viewport height, multiple it to get value for vh unit. Set the value in --vh custom property
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // same script when window is resized
+
     window.addEventListener('resize', () => {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -71,7 +69,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// fullpage.js styling
 body #fp-nav {
   margin-right: -10px;
 
@@ -91,9 +88,8 @@ body #fp-nav {
 
 .fp-viewing-banner #fp-nav{
    display: none;
-} // end of fullpage.js styling
+}
 
-// styles for repetitive elements
 .contact-button {
   font-size: 1rem;
   height: 3rem;
@@ -115,7 +111,7 @@ body #fp-nav {
   }
 }
 
-.link { // anchors
+.link {
   user-select: none;
   display: block;
 

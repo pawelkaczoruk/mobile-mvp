@@ -17,12 +17,7 @@
           target="_blank" 
           rel="noopener"
           :href="app.links.googlePlay"><img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge"></a>
-        <a 
-          class="link" 
-          target="_blank" 
-          rel="noopener"
-          :href="app.links.appStore"><img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge"></a>
-      </div>
+        </div>
     </div>
 
 
@@ -162,13 +157,8 @@ export default {
     margin: 0;
     vertical-align: top;
   }
-
-  a:first-child {
-    margin-bottom: .1rem;
-  }
 }
 
-// override global styles
 .link {
   @media screen and (min-width: 1024px) {
     &:hover {

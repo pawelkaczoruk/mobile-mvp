@@ -63,7 +63,7 @@ export default {
 }
 
 .fullpage {
-  height: 100vh; // fallback for browsers that do not support custom properties
+  height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%
 }

@@ -14,13 +14,6 @@
             href="https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk">
             <img src="../assets/images/Google_Play_Store_badge.svg" alt="Google Play Badge">
           </a>
-          <a 
-            class="link" 
-            target="_blank" 
-            rel="noopener"
-            href="https://play.google.com/store/apps/developer?id=Rafal+Bednarczuk">
-            <img src="../assets/images/App_Store_Badge.svg" alt="Apple App Store Badge">
-          </a>
         </div>
 
         <div class="social">
@@ -93,7 +86,6 @@ export default {
       this.canvas.height = this.$refs.bg.clientHeight;
       this.canvas.width = this.$refs.bg.clientWidth;
 
-      // draw canvas in next tick 
       const that = this;
 
       this.$nextTick(() => {
@@ -118,11 +110,9 @@ export default {
         y: canvas.height / 7
       };
 
-      // continue if WebGL is available and working
       if(ctx === null) return;
 
       function update() {
-        // clear and draw on canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.save();
         ctx.translate(pos.x, pos.y);
@@ -131,10 +121,7 @@ export default {
         ctx.drawImage(img, pos.x, pos.y, size.x, size.y);
         ctx.restore();
 
-
-        // calculate new positions
         if(pos.x >= canvas.width) pos.x = 0 - size.x;
-
         if(pos.y + size.y*1/3 < canvas.height / 2 && pos.y >= 0) {
           vel.y = vel.y + 0.001 * maxVel.y * Math.random();
         } 
@@ -142,12 +129,10 @@ export default {
           vel.y = vel.y - 0.001 * maxVel.y * Math.random();
         }
 
-        // apply new position
         const multiplier = Math.random() > 0.4 ? 1 : 0.8;
         pos.x += vel.x * multiplier;
         pos.y += vel.y;
 
-        // adjust values if boat is out of range
         if(pos.y <= 0) {
           pos.y = 0;
         } else if(pos.y >= canvas.height) {
@@ -159,7 +144,6 @@ export default {
         requestAnimationFrame(update);
       }
 
-      // load image and run animation
       const img = new Image();
       img.src = require('@/assets/images/boat_vector.svg');
       
@@ -279,7 +263,6 @@ canvas {
   z-index: 3;
 }
 
-// override global styles
 .contact-button {
   width: 15rem;
 }
