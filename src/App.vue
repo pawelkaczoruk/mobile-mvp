@@ -21,7 +21,7 @@ export default {
             'stunning design and animations',
             'video showcase of app',
             'implementation of key screens',
-            'release on Apple App Store & Google Play',
+            'available on Apple App Store & Google Play',
           ],
           video: require('@/assets/videos/app2.mp4'),
           links: {
